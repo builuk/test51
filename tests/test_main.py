@@ -56,3 +56,4 @@ def test_max_of_list():
     assert max_of_list([-1, -5, -3]) == -1
     with pytest.raises(ValueError):
         max_of_list([])
+
