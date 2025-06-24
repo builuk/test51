@@ -29,6 +29,12 @@ jobs:
       - run:
           name: Set PYTHONPATH
           command: echo 'export PYTHONPATH=$PYTHONPATH:/home/circleci/project' >> $BASH_ENV
+#      - run:
+#          name: Create .env file
+#          command: |
+#            echo "TOKEN=${TOKEN}" > .env
+#            echo "ADMIN_ID=${ADMIN_ID}" >> .env
+#          when: always
       - run:
           name: Setup Environment and Run Bot
           command: |
@@ -36,6 +42,7 @@ jobs:
             . venv/bin/activate
             pip install --upgrade pip
             pip install -r requirements.txt
+#            python main/bot.py
             python main.py
           no_output_timeout: 15m
 
